@@ -34,6 +34,31 @@ class BinaryTree():
                         print(f"{l.right.data} this is right")
             p=c_node
             
+    def pre_order_traversal(self,root):
+        if root is None:
+            return 
+        print(root.data ,end="-->")
+        self.pre_order_traversal(root.left)
+        self.pre_order_traversal(root.right)
+        
+        
+    def in_order_traversal(self,root):
+        if root is None:
+            return 
+        
+        self.in_order_traversal(root.left)
+        print(root.data ,end="-->")
+        self.in_order_traversal(root.right)
+        
+        
+    def post_order_traversal(self,root):
+        if root is None:
+            return 
+        
+        self.post_order_traversal(root.left)
+       
+        self.post_order_traversal(root.right)
+        print(root.data ,end="-->")
             
 k=BinaryTree()
 k.add(4)
@@ -43,6 +68,14 @@ k.add(1)
 k.add(2)
 k.add(9)
 k.add(10)
+
+k.pre_order_traversal(k.root)
+print(" ")
+
+k.in_order_traversal(k.root)
+
+print(" ")
+k.post_order_traversal(k.root)
 
             
             
